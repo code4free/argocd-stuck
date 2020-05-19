@@ -1,0 +1,141 @@
+I0519 16:49:31.919861       1 merged_client_builder.go:122] Using in-cluster configuration
+I0519 16:49:31.920540       1 merged_client_builder.go:164] Using in-cluster namespace
+time="2020-05-19T16:49:31Z" level=info msg="appResyncPeriod=1m0s"
+time="2020-05-19T16:49:31Z" level=info msg="Application Controller (version: v1.5.4+36bade7, built: 2020-05-05T19:02:17Z) starting (namespace: myns)"
+I0519 16:49:31.921581       1 reflector.go:120] Starting reflector *v1alpha1.AppProject (1m0s) from github.com/argoproj/argo-cd/controller/appcontroller.go:414
+I0519 16:49:31.921581       1 reflector.go:120] Starting reflector *v1alpha1.Application (1m0s) from github.com/argoproj/argo-cd/controller/appcontroller.go:413
+I0519 16:49:31.921659       1 reflector.go:158] Listing and watching *v1alpha1.AppProject from github.com/argoproj/argo-cd/controller/appcontroller.go:414
+I0519 16:49:31.921665       1 reflector.go:158] Listing and watching *v1alpha1.Application from github.com/argoproj/argo-cd/controller/appcontroller.go:413
+I0519 16:49:32.021779       1 shared_informer.go:227] caches populated
+time="2020-05-19T16:49:32Z" level=info msg="Starting configmap/secret informers"
+I0519 16:49:32.022079       1 reflector.go:120] Starting reflector *v1.ConfigMap (3m0s) from github.com/argoproj/argo-cd/util/settings/settings.go:641
+I0519 16:49:32.022105       1 reflector.go:158] Listing and watching *v1.ConfigMap from github.com/argoproj/argo-cd/util/settings/settings.go:641
+I0519 16:49:32.022234       1 reflector.go:120] Starting reflector *v1.Secret (3m0s) from github.com/argoproj/argo-cd/util/settings/settings.go:645
+I0519 16:49:32.022285       1 reflector.go:158] Listing and watching *v1.Secret from github.com/argoproj/argo-cd/util/settings/settings.go:645
+I0519 16:49:32.122225       1 shared_informer.go:227] caches populated
+time="2020-05-19T16:49:32Z" level=info msg="Configmap/secret informer synced"
+time="2020-05-19T16:49:32Z" level=info msg="0xc00059c780 subscribed to settings updates"
+time="2020-05-19T16:49:32Z" level=info msg="Notifying 1 settings subscribers: [0xc00059c780"
+time="2020-05-19T16:50:03Z" level=info msg="Refreshing app status (comparison expired. reconciledAt: never, expiry: 1m0s), level (2)" application=level1-app
+time="2020-05-19T16:50:03Z" level=info msg="Comparing app state (cluster: https://kubernetes.default.svc, namespace: myns)" application=level1-app
+time="2020-05-19T16:50:03Z" level=info msg="initializing cluster" server="https://kubernetes.default.svc"
+time="2020-05-19T16:50:03Z" level=info msg="Start syncing cluster" server="https://kubernetes.default.svc"
+time="2020-05-19T16:50:03Z" level=info msg="Cluster successfully synced" server="https://kubernetes.default.svc"
+time="2020-05-19T16:50:04Z" level=info msg="getRepoObjs stats" application=level1-app build_options_ms=0 helm_ms=0 manifests_ms=758 plugins_ms=0 repo_ms=0 time_ms=986 unmarshal_ms=0 version_ms=227
+time="2020-05-19T16:50:04Z" level=info msg="Initiated automated sync to '0.2.3'" application=level1-app dest-namespace=myns dest-server="https://kubernetes.default.svc" reason=OperationStarted type=Normal
+time="2020-05-19T16:50:04Z" level=info msg="Initiated automated sync to '0.2.3'" application=level1-app
+time="2020-05-19T16:50:04Z" level=info msg="Updated sync status:  -> OutOfSync" application=level1-app dest-namespace=myns dest-server="https://kubernetes.default.svc" reason=ResourceUpdated type=Normal
+time="2020-05-19T16:50:04Z" level=info msg="Updated health status:  -> Missing" application=level1-app dest-namespace=myns dest-server="https://kubernetes.default.svc" reason=ResourceUpdated type=Normal
+time="2020-05-19T16:50:04Z" level=info msg="updated 'level1-app' operation (phase: Running)"
+time="2020-05-19T16:50:04Z" level=info msg="Initialized new operation: {&SyncOperation{Revision:0.2.3,Prune:true,DryRun:false,SyncStrategy:nil,Resources:SyncOperationResource{},Source:nil,Manifests:,SyncOptions:,} { true}}" application=level1-app
+time="2020-05-19T16:50:04Z" level=info msg="Comparing app state (cluster: https://kubernetes.default.svc, namespace: myns)" application=level1-app
+time="2020-05-19T16:50:04Z" level=info msg="getRepoObjs stats" application=level1-app build_options_ms=0 helm_ms=0 manifests_ms=9 plugins_ms=0 repo_ms=1 time_ms=11 unmarshal_ms=0 version_ms=0
+time="2020-05-19T16:50:04Z" level=info msg="Update successful" application=level1-app
+time="2020-05-19T16:50:04Z" level=info msg="Reconciliation completed" application=level1-app dedup_ms=0 dest-namespace=myns dest-server="https://kubernetes.default.svc" diff_ms=2 fields.level=2 git_ms=986 health_ms=0 live_ms=0 settings_ms=0 sync_ms=0 time_ms=1031
+time="2020-05-19T16:50:04Z" level=info msg="Refreshing app status (comparison expired. reconciledAt: never, expiry: 1m0s), level (2)" application=level1-app
+time="2020-05-19T16:50:04Z" level=info msg="Comparing app state (cluster: https://kubernetes.default.svc, namespace: myns)" application=level1-app
+time="2020-05-19T16:50:04Z" level=info msg=syncing application=level1-app isSelectiveSync=false skipHooks=false started=false syncId=00001-SNhdO
+time="2020-05-19T16:50:04Z" level=info msg="getRepoObjs stats" application=level1-app build_options_ms=0 helm_ms=0 manifests_ms=10 plugins_ms=0 repo_ms=0 time_ms=10 unmarshal_ms=0 version_ms=0
+time="2020-05-19T16:50:04Z" level=info msg="Skipping auto-sync: another operation is in progress" application=level1-app
+time="2020-05-19T16:50:04Z" level=info msg="Updated sync status:  -> OutOfSync" application=level1-app dest-namespace=myns dest-server="https://kubernetes.default.svc" reason=ResourceUpdated type=Normal
+time="2020-05-19T16:50:04Z" level=info msg="Updated health status:  -> Missing" application=level1-app dest-namespace=myns dest-server="https://kubernetes.default.svc" reason=ResourceUpdated type=Normal
+time="2020-05-19T16:50:04Z" level=info msg=tasks application=level1-app isSelectiveSync=false syncId=00001-SNhdO tasks="[Sync/0 resource /Secret:myns/simple-secret nil->obj (,,), Sync/0 resource /Secret:myns/simple-secret2 nil->obj (,,), Sync/0 resource /Secret:myns/simple-secret3 nil->obj (,,), Sync/0 resource /Secret:myns/simple-secret4 nil->obj (,,), Sync/0 resource /Secret:myns/simple-secret5 nil->obj (,,), Sync/0 resource /Secret:myns/simple-secret6 nil->obj (,,), Sync/0 resource /ConfigMap:myns/simple-cm nil->obj (,,), Sync/0 resource /ConfigMap:myns/simple-cm2 nil->obj (,,), Sync/0 resource /ConfigMap:myns/simple-cm3 nil->obj (,,), Sync/0 resource /ConfigMap:myns/simple-cm4 nil->obj (,,), Sync/0 resource /ConfigMap:myns/simple-cm5 nil->obj (,,), Sync/0 resource /ConfigMap:myns/simple-cm6 nil->obj (,,)]"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource Secret/simple-secret6 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource Secret/simple-secret3 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource Secret/simple-secret in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource Secret/simple-secret2 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource Secret/simple-secret4 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource Secret/simple-secret5 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Update successful" application=level1-app
+time="2020-05-19T16:50:04Z" level=info msg="Reconciliation completed" application=level1-app dedup_ms=0 dest-namespace=myns dest-server="https://kubernetes.default.svc" diff_ms=1 fields.level=2 git_ms=10 health_ms=0 live_ms=0 settings_ms=0 sync_ms=0 time_ms=40
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource ConfigMap/simple-cm6 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource ConfigMap/simple-cm in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource ConfigMap/simple-cm4 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource ConfigMap/simple-cm5 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource ConfigMap/simple-cm3 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:04Z" level=info msg="Applying resource ConfigMap/simple-cm2 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Updating operation state. phase: Running -> Running, message: '' -> 'one or more tasks are running'" application=level1-app syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource Secret/simple-secret6 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource Secret/simple-secret3 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource Secret/simple-secret in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource Secret/simple-secret4 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource Secret/simple-secret5 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource Secret/simple-secret2 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Refreshing app status (controller refresh requested), level (1)" application=level1-app
+time="2020-05-19T16:50:05Z" level=info msg="Comparing app state (cluster: https://kubernetes.default.svc, namespace: myns)" application=level1-app
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'secret/simple-secret5 created'" application=level1-app kind=Secret name=simple-secret5 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'secret/simple-secret2 created'" application=level1-app kind=Secret name=simple-secret2 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'secret/simple-secret created'" application=level1-app kind=Secret name=simple-secret namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="Notifying 1 settings subscribers: [0xc00059c780"
+time="2020-05-19T16:50:05Z" level=info msg="Notifying 1 settings subscribers: [0xc00059c780"
+time="2020-05-19T16:50:05Z" level=info msg="Notifying 1 settings subscribers: [0xc00059c780"
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'secret/simple-secret3 created'" application=level1-app kind=Secret name=simple-secret3 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'secret/simple-secret4 created'" application=level1-app kind=Secret name=simple-secret4 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="getRepoObjs stats" application=level1-app build_options_ms=0 helm_ms=0 manifests_ms=11 plugins_ms=0 repo_ms=0 time_ms=12 unmarshal_ms=0 version_ms=0
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'secret/simple-secret6 created'" application=level1-app kind=Secret name=simple-secret6 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource ConfigMap/simple-cm6 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource ConfigMap/simple-cm2 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource ConfigMap/simple-cm3 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource ConfigMap/simple-cm4 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Notifying 1 settings subscribers: [0xc00059c780"
+time="2020-05-19T16:50:05Z" level=info msg="Notifying 1 settings subscribers: [0xc00059c780"
+time="2020-05-19T16:50:05Z" level=info msg="Notifying 1 settings subscribers: [0xc00059c780"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource ConfigMap/simple-cm5 in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Applying resource ConfigMap/simple-cm in cluster: https://10.43.0.1:443, namespace: myns"
+time="2020-05-19T16:50:05Z" level=info msg="Skipping auto-sync: another operation is in progress" application=level1-app
+time="2020-05-19T16:50:05Z" level=info msg="Update successful" application=level1-app
+time="2020-05-19T16:50:05Z" level=info msg="Reconciliation completed" application=level1-app dedup_ms=0 dest-namespace=myns dest-server="https://kubernetes.default.svc" diff_ms=16 fields.level=1 git_ms=13 health_ms=4 live_ms=0 settings_ms=0 sync_ms=0 time_ms=96
+time="2020-05-19T16:50:05Z" level=info msg="Refreshing app status (controller refresh requested), level (1)" application=level1-app
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'configmap/simple-cm6 created'" application=level1-app kind=ConfigMap name=simple-cm6 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'configmap/simple-cm5 created'" application=level1-app kind=ConfigMap name=simple-cm5 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'configmap/simple-cm3 created'" application=level1-app kind=ConfigMap name=simple-cm3 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'configmap/simple-cm4 created'" application=level1-app kind=ConfigMap name=simple-cm4 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'configmap/simple-cm created'" application=level1-app kind=ConfigMap name=simple-cm namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="adding resource result, status: 'Synced', phase: 'Running', message: 'configmap/simple-cm2 created'" application=level1-app kind=ConfigMap name=simple-cm2 namespace=myns phase=Sync syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="Updating operation state. phase: Running -> Succeeded, message: 'one or more tasks are running' -> 'successfully synced (all tasks run)'" application=level1-app syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="sync/terminate complete" application=level1-app duration=1.1798796s syncId=00001-SNhdO
+time="2020-05-19T16:50:05Z" level=info msg="updated 'level1-app' operation (phase: Succeeded)"
+time="2020-05-19T16:50:05Z" level=info msg="Sync operation to 0.2.3 succeeded" application=level1-app dest-namespace=myns dest-server="https://kubernetes.default.svc" reason=OperationCompleted type=Normal
+I0519 16:50:31.883432       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:51:31.815338       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:52:31.747194       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:52:31.823422       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:641: forcing resync
+I0519 16:52:31.823759       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:645: forcing resync
+I0519 16:53:31.679385       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:54:31.611438       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:55:31.543466       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:55:31.618334       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:641: forcing resync
+I0519 16:55:31.618486       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:645: forcing resync
+I0519 16:56:31.475550       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:56:42.550283       1 reflector.go:383] github.com/argoproj/argo-cd/util/settings/settings.go:645: Watch close - *v1.Secret total 9 items received
+I0519 16:57:31.407378       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:57:32.404912       1 reflector.go:383] github.com/argoproj/argo-cd/controller/appcontroller.go:414: Watch close - *v1alpha1.AppProject total 2 items received
+I0519 16:57:50.448544       1 reflector.go:383] github.com/argoproj/argo-cd/util/settings/settings.go:641: Watch close - *v1.ConfigMap total 1 items received
+I0519 16:58:31.339348       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 16:58:31.413134       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:641: forcing resync
+I0519 16:58:31.413427       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:645: forcing resync
+I0519 16:59:13.297205       1 reflector.go:383] github.com/argoproj/argo-cd/controller/appcontroller.go:413: Watch close - *v1alpha1.Application total 9 items received
+time="2020-05-19T16:59:31Z" level=info msg="Alloc=9157 TotalAlloc=1398870 Sys=344312 NumGC=38 Goroutines=333"
+I0519 16:59:31.263909       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:00:31.195476       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:01:31.127410       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:01:31.202584       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:641: forcing resync
+I0519 17:01:31.202584       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:645: forcing resync
+I0519 17:02:31.059366       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:03:17.078640       1 reflector.go:383] github.com/argoproj/argo-cd/util/settings/settings.go:645: Watch close - *v1.Secret total 0 items received
+I0519 17:03:30.991090       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:04:14.031620       1 reflector.go:383] github.com/argoproj/argo-cd/util/settings/settings.go:641: Watch close - *v1.ConfigMap total 0 items received
+I0519 17:04:30.922909       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:04:30.997268       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:645: forcing resync
+I0519 17:04:30.997609       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:641: forcing resync
+I0519 17:04:51.886635       1 reflector.go:383] github.com/argoproj/argo-cd/controller/appcontroller.go:414: Watch close - *v1alpha1.AppProject total 0 items received
+I0519 17:05:30.854869       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:05:39.851036       1 reflector.go:383] github.com/argoproj/argo-cd/controller/appcontroller.go:413: Watch close - *v1alpha1.Application total 0 items received
+I0519 17:06:30.787774       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:07:30.719149       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:07:30.792127       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:645: forcing resync
+I0519 17:07:30.792254       1 reflector.go:241] github.com/argoproj/argo-cd/util/settings/settings.go:641: forcing resync
+I0519 17:08:30.651064       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+time="2020-05-19T17:09:30Z" level=info msg="Alloc=9033 TotalAlloc=1403183 Sys=344312 NumGC=43 Goroutines=333"
+I0519 17:09:30.582316       1 reflector.go:241] github.com/argoproj/argo-cd/controller/appcontroller.go:413: forcing resync
+I0519 17:10:18.587950       1 reflector.go:383] github.com/argoproj/argo-cd/util/settings/settings.go:641: Watch close - *v1.ConfigMap total 0 items received

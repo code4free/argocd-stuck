@@ -1,0 +1,228 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: level1-app
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myns
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    chart: raw
+    repoURL: https://kubernetes-charts-incubator.storage.googleapis.com
+    targetRevision: 0.2.3
+    helm:
+      values: |
+        some:
+          value: helloworld
+        templates:
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm1
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret1
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm2
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret2
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm3
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret3
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm4
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret4
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm5
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret5
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm6
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret6
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm7
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret7
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm8
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret8
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm9
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret9
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm10
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret10
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm11
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret11
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com
+          - |
+            kind: ConfigMap
+            apiVersion: v1
+            metadata:
+              name: simple-cm12
+              namespace: myns
+            data:
+              some.name: "{{ .Values.some.value }}"
+          - |
+            kind: Secret
+            apiVersion: v1
+            metadata:
+              name: simple-secret12
+              namespace: myns
+            type: Opaque
+            stringData:
+              some.uri: https://github.com

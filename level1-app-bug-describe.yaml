@@ -1,0 +1,785 @@
+Name:         level1-app
+Namespace:    myns
+Labels:       <none>
+Annotations:  API Version:  argoproj.io/v1alpha1
+Kind:         Application
+Metadata:
+  Creation Timestamp:  2020-05-19T16:50:03Z
+  Finalizers:
+    resources-finalizer.argocd.argoproj.io
+  Generation:  8
+  Managed Fields:
+    API Version:  argoproj.io/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .:
+          f:kubectl.kubernetes.io/last-applied-configuration:
+        f:finalizers:
+          .:
+          v:"resources-finalizer.argocd.argoproj.io":
+      f:spec:
+        .:
+        f:destination:
+          .:
+          f:namespace:
+          f:server:
+        f:project:
+        f:source:
+          .:
+          f:chart:
+          f:helm:
+            .:
+            f:values:
+          f:repoURL:
+          f:targetRevision:
+        f:syncPolicy:
+          .:
+          f:automated:
+            .:
+            f:prune:
+            f:selfHeal:
+    Manager:      kubectl
+    Operation:    Update
+    Time:         2020-05-19T16:50:03Z
+    API Version:  argoproj.io/v1alpha1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:status:
+        .:
+        f:health:
+          .:
+          f:status:
+        f:history:
+        f:observedAt:
+        f:operationState:
+          .:
+          f:finishedAt:
+          f:message:
+          f:operation:
+            .:
+            f:initiatedBy:
+              .:
+              f:automated:
+            f:sync:
+              .:
+              f:prune:
+              f:revision:
+          f:phase:
+          f:startedAt:
+          f:syncResult:
+            .:
+            f:resources:
+            f:revision:
+            f:source:
+              .:
+              f:chart:
+              f:helm:
+                .:
+                f:values:
+              f:repoURL:
+              f:targetRevision:
+        f:reconciledAt:
+        f:resources:
+        f:sourceType:
+        f:summary:
+        f:sync:
+          .:
+          f:comparedTo:
+            .:
+            f:destination:
+              .:
+              f:namespace:
+              f:server:
+            f:source:
+              .:
+              f:chart:
+              f:helm:
+                .:
+                f:values:
+              f:repoURL:
+              f:targetRevision:
+          f:revision:
+          f:status:
+    Manager:         argocd-application-controller
+    Operation:       Update
+    Time:            2020-05-19T16:50:05Z
+  Resource Version:  812
+  Self Link:         /apis/argoproj.io/v1alpha1/namespaces/myns/applications/level1-app
+  UID:               10abf1f6-13d8-4828-a9b1-97ab2a1feb4e
+Spec:
+  Destination:
+    Namespace:  myns
+    Server:     https://kubernetes.default.svc
+  Project:      default
+  Source:
+    Chart:  raw
+    Helm:
+      Values:  some:
+  value: helloworld
+templates:
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm2
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret2
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm3
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret3
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm4
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret4
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm5
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret5
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm6
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret6
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+
+    Repo URL:         https://kubernetes-charts-incubator.storage.googleapis.com
+    Target Revision:  0.2.3
+  Sync Policy:
+    Automated:
+      Prune:      true
+      Self Heal:  true
+Status:
+  Health:
+    Status:  Missing
+  History:
+    Deployed At:  2020-05-19T16:50:05Z
+    Id:           0
+    Revision:     0.2.3
+    Source:
+      Chart:  raw
+      Helm:
+        Values:  some:
+  value: helloworld
+templates:
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm2
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret2
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm3
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret3
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm4
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret4
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm5
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret5
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm6
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret6
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+
+      Repo URL:         https://kubernetes-charts-incubator.storage.googleapis.com
+      Target Revision:  0.2.3
+  Observed At:          2020-05-19T16:50:05Z
+  Operation State:
+    Finished At:  2020-05-19T16:50:05Z
+    Message:      successfully synced (all tasks run)
+    Operation:
+      Initiated By:
+        Automated:  true
+      Sync:
+        Prune:     true
+        Revision:  0.2.3
+    Phase:         Succeeded
+    Started At:    2020-05-19T16:50:04Z
+    Sync Result:
+      Resources:
+        Group:
+        Hook Phase:  Running
+        Kind:        Secret
+        Message:     secret/simple-secret5 created
+        Name:        simple-secret5
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        Secret
+        Message:     secret/simple-secret2 created
+        Name:        simple-secret2
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        Secret
+        Message:     secret/simple-secret created
+        Name:        simple-secret
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        Secret
+        Message:     secret/simple-secret3 created
+        Name:        simple-secret3
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        Secret
+        Message:     secret/simple-secret4 created
+        Name:        simple-secret4
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        Secret
+        Message:     secret/simple-secret6 created
+        Name:        simple-secret6
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/simple-cm6 created
+        Name:        simple-cm6
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/simple-cm5 created
+        Name:        simple-cm5
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/simple-cm3 created
+        Name:        simple-cm3
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/simple-cm4 created
+        Name:        simple-cm4
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/simple-cm created
+        Name:        simple-cm
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/simple-cm2 created
+        Name:        simple-cm2
+        Namespace:   myns
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+      Revision:      0.2.3
+      Source:
+        Chart:  raw
+        Helm:
+          Values:  some:
+  value: helloworld
+templates:
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm2
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret2
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm3
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret3
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm4
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret4
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm5
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret5
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm6
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret6
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+
+        Repo URL:         https://kubernetes-charts-incubator.storage.googleapis.com
+        Target Revision:  0.2.3
+  Reconciled At:          2020-05-19T16:50:04Z
+  Resources:
+    Health:
+      Status:   Missing
+    Kind:       ConfigMap
+    Name:       simple-cm
+    Namespace:  myns
+    Status:     OutOfSync
+    Version:    v1
+    Kind:       Secret
+    Name:       simple-secret
+    Namespace:  myns
+    Status:     Synced
+    Version:    v1
+    Health:
+      Status:   Missing
+    Kind:       ConfigMap
+    Name:       simple-cm4
+    Namespace:  myns
+    Status:     OutOfSync
+    Version:    v1
+    Kind:       Secret
+    Name:       simple-secret4
+    Namespace:  myns
+    Status:     Synced
+    Version:    v1
+    Kind:       Secret
+    Name:       simple-secret6
+    Namespace:  myns
+    Status:     Synced
+    Version:    v1
+    Health:
+      Status:   Missing
+    Kind:       ConfigMap
+    Name:       simple-cm2
+    Namespace:  myns
+    Status:     OutOfSync
+    Version:    v1
+    Kind:       Secret
+    Name:       simple-secret2
+    Namespace:  myns
+    Status:     Synced
+    Version:    v1
+    Health:
+      Status:   Missing
+    Kind:       ConfigMap
+    Name:       simple-cm3
+    Namespace:  myns
+    Status:     OutOfSync
+    Version:    v1
+    Kind:       Secret
+    Name:       simple-secret3
+    Namespace:  myns
+    Status:     Synced
+    Version:    v1
+    Health:
+      Status:   Missing
+    Kind:       ConfigMap
+    Name:       simple-cm5
+    Namespace:  myns
+    Status:     OutOfSync
+    Version:    v1
+    Kind:       Secret
+    Name:       simple-secret5
+    Namespace:  myns
+    Status:     Synced
+    Version:    v1
+    Health:
+      Status:   Missing
+    Kind:       ConfigMap
+    Name:       simple-cm6
+    Namespace:  myns
+    Status:     OutOfSync
+    Version:    v1
+  Source Type:  Helm
+  Summary:
+  Sync:
+    Compared To:
+      Destination:
+        Namespace:  myns
+        Server:     https://kubernetes.default.svc
+      Source:
+        Chart:  raw
+        Helm:
+          Values:  some:
+  value: helloworld
+templates:
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm2
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret2
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm3
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret3
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm4
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret4
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm5
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret5
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+  - |
+    kind: ConfigMap
+    apiVersion: v1
+    metadata:
+      name: simple-cm6
+      namespace: myns
+    data:
+      some.name: "{{ .Values.some.value }}"
+  - |
+    kind: Secret
+    apiVersion: v1
+    metadata:
+      name: simple-secret6
+      namespace: myns
+    type: Opaque
+    stringData:
+      some.uri: https://github.com
+
+        Repo URL:         https://kubernetes-charts-incubator.storage.googleapis.com
+        Target Revision:  0.2.3
+    Revision:             0.2.3
+    Status:               OutOfSync
+Events:
+  Type    Reason              Age   From                           Message
+  ----    ------              ----  ----                           -------
+  Normal  OperationStarted    18m   argocd-application-controller  Initiated automated sync to '0.2.3'
+  Normal  ResourceUpdated     18m   argocd-application-controller  Updated sync status:  -> OutOfSync
+  Normal  ResourceUpdated     18m   argocd-application-controller  Updated health status:  -> Missing
+  Normal  ResourceUpdated     18m   argocd-application-controller  Updated sync status:  -> OutOfSync
+  Normal  ResourceUpdated     18m   argocd-application-controller  Updated health status:  -> Missing
+  Normal  OperationCompleted  18m   argocd-application-controller  Sync operation to 0.2.3 succeeded
